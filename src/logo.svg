@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1477" height="434" viewBox="0 0 1477 434">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #082032;
+      }
+
+      .cls-1 {
+        font-size: 300px;
+        font-family: ReggaeOne-Regular, Reggae One;
+        letter-spacing: -0.048em;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-274 -1772)">
+    <g id="Group_2" data-name="Group 2">
+      <text id="E-N_GRIK" data-name="E-N  GRIK" class="cls-1" transform="translate(274 2120)"><tspan x="0" y="0" xml:space="preserve">E-N  GRIK</tspan></text>
+      <g id="Person_icon_BLACK-01" transform="translate(814.301 1853.914)">
+        <path id="Path_1" data-name="Path 1" class="cls-2" d="M108.13,8.586c-15.844,0-28.67,9.326-28.67,20.835S92.289,55.6,108.13,55.6c15.826,0,28.664-14.675,28.664-26.175S123.956,8.586,108.13,8.586ZM76.46,55.6c-20.3,0-36.905,11.952-36.905,26.679v64.61C39.555,151.914,45,156,51.937,156s12.555-4.08,12.555-9.113V88.631h6.395s.146,152.1.146,162.09c0,6.742,7.539,12.223,16.83,12.223s16.808-5.482,16.808-12.223V156.6h6.906v94.121c0,6.742,7.523,12.223,16.827,12.223s16.881-5.482,16.881-12.223V88.631h6.471v58.255c0,5.029,5.628,9.113,12.552,9.113s12.391-4.08,12.391-9.113V82.276c0-14.728-16.62-26.679-36.9-26.679H76.46Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

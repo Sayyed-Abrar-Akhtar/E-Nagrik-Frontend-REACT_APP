@@ -14,14 +14,14 @@ const NoticeBar = () => {
   return (
     <section className='notice-container'>
       {loading ? (
-        <p>loading...</p>
+        <p className='notice-text'>Loading...</p>
       ) : error ? (
-        <p>error...</p>
+        <p className='notice-text'>Error...</p>
       ) : (
         <>
           {notices.map((notice, index) => (
             <p key={index} className='notice-text'>
-              {notice.notice_info}{' '}
+              {notice.info}{' '}
             </p>
           ))}
         </>

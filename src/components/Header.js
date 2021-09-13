@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { menuObjArr } from '../data/menu';
 import logo from '../logo.svg';
 
 const Header = () => {
+  const { success, error } = useSelector((state) => state.authorisedCitizen);
+
+  const [loginStatus, setLoginStatus] = useState(false);
+
+  useEffect(() => {
+    if (success) {
+      setLoginStatus(true);
+    }
+  }, [success]);
+
   return (
     <header className='header' id='header'>
       <section className='logo-box'>
@@ -19,6 +30,19 @@ const Header = () => {
             </Link>
           </p>
         ))}
+        {!error && loginStatus ? (
+          <p className='nav-menu'>
+            <Link to='/profile' className='nav-link'>
+              profile
+            </Link>
+          </p>
+        ) : (
+          <p className='nav-menu'>
+            <Link to='/login' className='nav-link'>
+              login
+            </Link>
+          </p>
+        )}
       </nav>
     </header>
   );

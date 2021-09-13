@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 import {
+  CITIZEN_LOGIN_FAIL,
+  CITIZEN_LOGIN_REQUEST,
+  CITIZEN_LOGIN_SUCCESS,
   CITIZEN_POST_FAIL,
   CITIZEN_POST_REQUEST,
   CITIZEN_POST_SUCCESS,
@@ -26,3 +29,29 @@ export const saveCitizen = (citizenObj) => async (dispatch) => {
     });
   }
 };
+
+export const citizenAuthorisation =
+  (citizenCredentials) => async (dispatch) => {
+    try {
+      dispatch({ type: CITIZEN_LOGIN_REQUEST });
+
+      const { data } = await axios.post(
+        `https://e-nagrik-api.herokuapp.com/api/citizen/auth`,
+        citizenCredentials
+      );
+
+      dispatch({ type: CITIZEN_LOGIN_SUCCESS, payload: data });
+      localStorage.setItem(
+        'citizenCredentials',
+        JSON.stringify({ success: true, citizenData: data.citizenData })
+      );
+    } catch (error) {
+      dispatch({
+        type: CITIZEN_LOGIN_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };

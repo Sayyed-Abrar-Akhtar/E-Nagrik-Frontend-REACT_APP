@@ -33,8 +33,6 @@ const RegisterScreen = ({ history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    alert(gender);
-
     dispatch(
       saveCitizen({
         citizen_name: ctznName,

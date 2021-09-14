@@ -10,6 +10,10 @@
   --black: rgb(0, 0, 0);
   --margin-default: 3rem;
   --container-width: 90%;
+  --error-msg-gradient-from: rgb(219, 52, 69);
+  --error-msg-gradient-to: rgb(247, 23, 53);
+  --success-msg-gradient-from: rgb(11, 171, 100);
+  --success-msg-gradient-to: rgb(59, 183, 143);
 }
 
 body {
@@ -135,13 +139,28 @@ main {
   color: var(--grey);
 }
 
-.input-field {
+.input-field,
+textarea {
   width: 100%;
   box-sizing: border-box;
   height: 3rem;
   border: none;
   padding-left: 1rem;
   border-bottom: 0.15rem solid var(--secondary-color);
+}
+
+textarea {
+  outline: none;
+  resize: vertical;
+  height: 5rem;
+}
+
+.complain-textarea {
+  width: 90%;
+  margin: 0 5%;
+  padding: 0 0.5rem;
+  margin-top: -5rem;
+  box-sizing: border-box;
 }
 
 .input-field:focus {
@@ -214,7 +233,8 @@ main {
   width: 50%;
 }
 
-.login-heading {
+.login-heading,
+.register-heading {
   margin-bottom: 1.5rem;
 }
 
@@ -439,4 +459,117 @@ main {
   align-items: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.footer > p {
+  color: var(--white);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.footer > p:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.author {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  margin: 0;
+}
+
+.footer-heart {
+  height: 0.75rem;
+  color: #fe251b;
+  animation: 1.5s cubic-bezier(0.5, 0, 0.5, 1) 0s normal none infinite running
+    heartbeat;
+  -webkit-animation: 1.5s cubic-bezier(0.5, 0, 0.5, 1) 0s normal none infinite
+    running heartbeat;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*  */
+/*  DIALOG */
+/*  */
+
+.dialog-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  animation: dialogAnimation 0.7s linear;
+}
+
+.dialog--normal {
+  background-color: var(--secondary-color);
+}
+
+.dialog--error {
+  background: linear-gradient(
+    to bottom,
+    var(--error-msg-gradient-from),
+    var(--error-msg-gradient-to)
+  );
+}
+
+.dialog--success {
+  background: linear-gradient(
+    to bottom,
+    var(--success-msg-gradient-from),
+    var(--success-msg-gradient-to)
+  );
+}
+
+.dialog-text {
+  color: var(--white);
+}
+
+@keyframes dialogAnimation {
+  from {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  to {
+    width: 20rem;
+    height: 15rem;
+    opacity: 0.9;
+  }
+}
+
+/* SUPPORT SCREEN */
+.support-screen {
+  width: 80%;
+  margin: 5rem auto;
 }

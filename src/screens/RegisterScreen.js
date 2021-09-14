@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveCitizen } from '../actions/citizenActions';
 import Btn from '../components/Btn';
+import Dialog from '../components/Dialog';
 import InputField from '../components/InputField';
 import MessageBar from '../components/MessageBar';
 import RadioBtn from '../components/RadioBtn';
@@ -25,8 +26,12 @@ const RegisterScreen = ({ history }) => {
 
   useEffect(() => {
     if (success) {
-      dispatch({ type: CITIZEN_POST_RESET });
-      history.push('/login');
+      const setTimer = setTimeout(() => {
+        dispatch({ type: CITIZEN_POST_RESET });
+        history.push('/login');
+      }, 3000);
+
+      return () => clearTimeout(setTimer);
     }
   }, [success, history, dispatch]);
 
@@ -51,7 +56,7 @@ const RegisterScreen = ({ history }) => {
 
   return (
     <section className='register-screen'>
-      <h1 className='login-heading'>Citizen Registration</h1>
+      <h1 className='register-heading'>Citizen Registration</h1>
       <form onSubmit={(e) => submitHandler(e)} className='register-form'>
         <section className='input-fields-box'>
           <InputField
@@ -128,6 +133,7 @@ const RegisterScreen = ({ history }) => {
         )}
       </form>
       {error && <MessageBar type='error' text={error} />}
+      {success && <Dialog type='success' text='Registration Successful' />}
     </section>
   );
 };

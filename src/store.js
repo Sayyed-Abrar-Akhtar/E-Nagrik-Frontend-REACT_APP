@@ -9,12 +9,20 @@ import {
   authorisedCitizenReducer,
   newCitizenReducer,
 } from './reducers/citizenReducers';
+import { savedBirthReducer } from './reducers/birthRegistrationReducers';
+import { savedDeathReducer } from './reducers/deathRegistrationReducers';
+import { savedMarriageReducer } from './reducers/marriageRegistrationReducers';
+import { savedComplainReducer } from './reducers/complainRegistrationReducers';
 
 const reducer = combineReducers({
   getNotices: getNoticesReducer,
   getAllNotices: getAllNoticesReducer,
   newCitizen: newCitizenReducer,
   authorisedCitizen: authorisedCitizenReducer,
+  savedBirth: savedBirthReducer,
+  savedDeath: savedDeathReducer,
+  savedMarriage: savedMarriageReducer,
+  savedComplain: savedComplainReducer,
 });
 
 const citizenCredentialsFromStorage = localStorage.getItem('citizenCredentials')
@@ -29,6 +37,10 @@ const initialState = {
     success: citizenCredentialsFromStorage.success || false,
     citizenData: citizenCredentialsFromStorage.citizenData || {},
   },
+  savedBirth: { birthData: {} },
+  savedDeath: { deathData: {} },
+  savedMarriage: { marriageData: {} },
+  savedComplain: { complainData: {} },
 };
 
 const middleware = [thunk];

@@ -10,7 +10,38 @@ const ProfileScreen = ({ history }) => {
     }
   }, [history, success]);
 
-  return <section className='profile-screen'>profile screen</section>;
+  return (
+    <section className='profile-screen'>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />{' '}
+      <strong style={{ textAlign: 'center', display: 'block' }}>
+        Under development
+      </strong>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </section>
+  );
 };
 
 export default ProfileScreen;

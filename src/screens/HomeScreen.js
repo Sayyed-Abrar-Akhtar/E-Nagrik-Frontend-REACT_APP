@@ -32,14 +32,14 @@ const HomeScreen = () => {
           <section className='category-grid '>
             <Category
               gridClass='category_citizen'
-              link='register'
+              link='/register'
               imgSrc={citizenRegistration}
               imgAlt='citizen registration image'
               text='citizen registration'
             />
             <Category
               gridClass='category_birth'
-              link='register'
+              link='/birth-registration'
               imgSrc={birthRegistration}
               imgAlt='birth registration image'
               text='birth registration'
@@ -47,21 +47,21 @@ const HomeScreen = () => {
 
             <Category
               gridClass='category_marriage'
-              link='register'
+              link='/marriage-registration'
               imgSrc={marriageRegistration}
               imgAlt='marriage registration image'
               text='marriage registration'
             />
             <Category
               gridClass='category_death'
-              link='register'
+              link='/death-registration'
               imgSrc={deathRegistration}
               imgAlt='death registration image'
               text='death registration'
             />
             <Category
               gridClass='category_complain'
-              link='register'
+              link='/complain-registration'
               imgSrc={complainRegistration}
               imgAlt='complain registration image'
               text='complain registration'

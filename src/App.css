@@ -301,7 +301,7 @@ textarea {
   height: 100%;
   object-fit: fill;
   opacity: 0.5;
-  scale: 1.05;
+  transform: scale(1.05);
   transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
@@ -320,7 +320,7 @@ textarea {
 
 .category-link:hover > .category-img {
   opacity: 1;
-  scale: 1.2;
+  transform: scale(1.2);
 }
 
 /* HOMESCREEN */

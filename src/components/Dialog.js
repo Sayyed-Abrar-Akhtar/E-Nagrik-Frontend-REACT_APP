@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dialog = ({ type, text }) => {
+const Dialog = ({ type, text, idName = 'register-success' }) => {
   return (
     <section
       className={
@@ -8,6 +8,7 @@ const Dialog = ({ type, text }) => {
           ? `dialog-container dialog--${type}`
           : 'dialog-container dialog--normal'
       }
+      id={idName}
     >
       <p className='dialog-text'>{text}</p>
     </section>

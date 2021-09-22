@@ -25,20 +25,20 @@ const Header = () => {
       <nav className='nav'>
         {menuObjArr.map((menu, index) => (
           <p key={index} className='nav-menu'>
-            <Link to={menu.link} className='nav-link'>
+            <Link to={menu.link} className='nav-link' id={menu.id}>
               {menu.name}
             </Link>
           </p>
         ))}
         {!error && loginStatus ? (
           <p className='nav-menu'>
-            <Link to='/profile' className='nav-link'>
+            <Link to='/profile' className='nav-link' id='menu-profile'>
               profile
             </Link>
           </p>
         ) : (
           <p className='nav-menu'>
-            <Link to='/login' className='nav-link'>
+            <Link to='/login' className='nav-link' id='menu-login'>
               login
             </Link>
           </p>

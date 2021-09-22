@@ -20,10 +20,11 @@ const SupportScreen = () => {
           <InputField inputType='text' placeholder='Address' />
         </section>
         <textarea
+          id='support-text'
           className='complain-textarea'
           placeholder='Your Message'
         ></textarea>
-        <Btn classes='btn btn--primary' text='register' />
+        <Btn classes='btn btn--primary' text='send' idName='support-btn' />
       </form>
     </section>
   );

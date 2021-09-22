@@ -75,12 +75,14 @@ const MarriageRegistrationScreen = ({ history }) => {
             placeholder='Bridegroom Name'
             val={bridegroomName}
             setVal={setBridegroomName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Bride Name'
             val={brideName}
             setVal={setBrideName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -123,47 +125,63 @@ const MarriageRegistrationScreen = ({ history }) => {
             placeholder='Bridegroom Father Name'
             val={bridegroomFatherName}
             setVal={setBridegroomFatherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Bride Father Name'
             val={brideFatherName}
             setVal={setBrideFatherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Bridegroom Mother Name'
             val={bridegroomMotherName}
             setVal={setBridegroomMotherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Bride Mother Name'
             val={brideMotherName}
             setVal={setBrideMotherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Bridegroom Grandfather Name'
             val={bridegroomGrandfatherName}
             setVal={setBridegroomGrandfatherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Bride Grandfather Name'
             val={brideGrandfatherName}
             setVal={setBrideGrandfatherName}
+            isRegExpValid={true}
           />
         </section>
 
         {loading ? (
           <Btn classes='btn btn--primary' text='Loading...' />
         ) : (
-          <Btn classes='btn btn--primary' text='register' />
+          <Btn
+            classes='btn btn--primary'
+            text='register'
+            idName='marriage-register-btn'
+          />
         )}
       </form>
       {error && <MessageBar type='error' text={error} />}
-      {success && <Dialog type='success' text='Registration Successful' />}
+      {success && (
+        <Dialog
+          type='success'
+          text='Registration Successful'
+          idName='marriage-register-success'
+        />
+      )}
     </section>
   );
 };

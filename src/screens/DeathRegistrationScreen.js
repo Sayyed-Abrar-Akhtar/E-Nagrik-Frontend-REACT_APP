@@ -79,6 +79,7 @@ const DeathRegistrationScreen = ({ history }) => {
             placeholder='Deceased Name'
             val={deceasedName}
             setVal={setDeceasedName}
+            isRegExpValid={true}
           />
 
           <RadioBtn
@@ -95,6 +96,7 @@ const DeathRegistrationScreen = ({ history }) => {
             placeholder='Age'
             val={age}
             setVal={setAge}
+            min='1'
           />
           <InputField
             inputType='date'
@@ -108,12 +110,14 @@ const DeathRegistrationScreen = ({ history }) => {
             placeholder='Death Place'
             val={deathPlace}
             setVal={setDeathPlace}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Country of Birth'
             val={birthCountry}
             setVal={setBirthCountry}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -132,6 +136,7 @@ const DeathRegistrationScreen = ({ history }) => {
             placeholder='Marital Status'
             val={maritalStatus}
             setVal={setMaritalStatus}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -144,42 +149,49 @@ const DeathRegistrationScreen = ({ history }) => {
             placeholder='Religion'
             val={religion}
             setVal={setReligion}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
-            placeholder="Grandfather's Name"
+            placeholder='Grandfather Name'
             val={grandfatherName}
             setVal={setGrandfatherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
-            placeholder="Father's Name"
+            placeholder='Father Name'
             val={fatherName}
             setVal={setFatherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Spouse Name'
             val={spouseName}
             setVal={setSpouseName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Cause of Death'
             val={deathCause}
             setVal={setDeathCause}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
-            placeholder="Informant's Name"
+            placeholder='Informant Name'
             val={informantName}
             setVal={setInformantName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
             placeholder='Informant relation with deceased'
             val={informantRelation}
             setVal={setInformantRelation}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -192,11 +204,21 @@ const DeathRegistrationScreen = ({ history }) => {
         {loading ? (
           <Btn classes='btn btn--primary' text='Loading...' />
         ) : (
-          <Btn classes='btn btn--primary' text='register' />
+          <Btn
+            classes='btn btn--primary'
+            text='register'
+            idName='death-register-btn'
+          />
         )}
       </form>
       {error && <MessageBar type='error' text={error} />}
-      {success && <Dialog type='success' text='Registration Successful' />}
+      {success && (
+        <Dialog
+          type='success'
+          text='Registration Successful'
+          idName='death-register-success'
+        />
+      )}
     </section>
   );
 };

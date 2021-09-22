@@ -61,7 +61,7 @@ const LoginScreen = ({ history }) => {
           {loading ? (
             <Btn classes='btn btn--primary' text='Loading...' />
           ) : (
-            <Btn classes='btn btn--primary' text='login' />
+            <Btn classes='btn btn--primary' text='login' idName='login-btn' />
           )}
 
           <p className='register-link'>

@@ -57,6 +57,7 @@ const ComplainRegistrationScreen = ({ history }) => {
             placeholder='Name'
             val={ctznName}
             setVal={setCtznName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -75,6 +76,7 @@ const ComplainRegistrationScreen = ({ history }) => {
             placeholder='Assailant Name'
             val={assailantName}
             setVal={setAssailantName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -84,19 +86,30 @@ const ComplainRegistrationScreen = ({ history }) => {
           />
         </section>
         <textarea
+          id='event-description'
           className='complain-textarea'
-          placeholder='Event in detail..'
+          placeholder='Event description'
           value={eventDetail}
           onChange={(e) => setEventDetail(e.target.value)}
         ></textarea>{' '}
         {loading ? (
           <Btn classes='btn btn--primary' text='Loading...' />
         ) : (
-          <Btn classes='btn btn--primary' text='register' />
+          <Btn
+            classes='btn btn--primary'
+            text='register'
+            idName='complain-register-success'
+          />
         )}
       </form>
       {error && <MessageBar type='error' text={error} />}
-      {success && <Dialog type='success' text='Registration Successful' />}
+      {success && (
+        <Dialog
+          type='success'
+          text='Registration Successful'
+          idName='complain-register-success'
+        />
+      )}
     </section>
   );
 };

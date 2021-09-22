@@ -36,6 +36,7 @@ const HomeScreen = () => {
               imgSrc={citizenRegistration}
               imgAlt='citizen registration image'
               text='citizen registration'
+              idName='citizen-registration-section'
             />
             <Category
               gridClass='category_birth'
@@ -43,6 +44,7 @@ const HomeScreen = () => {
               imgSrc={birthRegistration}
               imgAlt='birth registration image'
               text='birth registration'
+              idName='birth-registration-section'
             />
 
             <Category
@@ -51,6 +53,7 @@ const HomeScreen = () => {
               imgSrc={marriageRegistration}
               imgAlt='marriage registration image'
               text='marriage registration'
+              idName='marriage-registration-section'
             />
             <Category
               gridClass='category_death'
@@ -58,6 +61,7 @@ const HomeScreen = () => {
               imgSrc={deathRegistration}
               imgAlt='death registration image'
               text='death registration'
+              idName='death-registration-section'
             />
             <Category
               gridClass='category_complain'
@@ -65,6 +69,7 @@ const HomeScreen = () => {
               imgSrc={complainRegistration}
               imgAlt='complain registration image'
               text='complain registration'
+              idName='complain-registration-section'
             />
           </section>
         </section>
@@ -87,6 +92,7 @@ const HomeScreen = () => {
               <p>Error...</p>
             ) : (
               <InfoList
+                type='news'
                 informations={[
                   { info: 'news1' },
                   { info: 'news2' },

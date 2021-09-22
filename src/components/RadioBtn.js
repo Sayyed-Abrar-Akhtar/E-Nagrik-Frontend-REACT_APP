@@ -25,7 +25,9 @@ const RadioBtn = ({
           value={val}
           onChange={(e) => setVal(e.target.value)}
         />
-        <label htmlFor={lbl}>{lbl}</label>
+        <label htmlFor={lbl} id={`label-${lbl}`}>
+          {lbl}
+        </label>
       </section>
       <section className='radio-options'>
         <input
@@ -35,7 +37,9 @@ const RadioBtn = ({
           value={val1}
           onChange={(e) => setVal1(e.target.value)}
         />
-        <label htmlFor={lbl1}>{lbl1}</label>
+        <label htmlFor={lbl1} id={`label-${lbl1}`}>
+          {lbl1}
+        </label>
       </section>
       {val2 && (
         <section className='radio-options'>
@@ -46,7 +50,9 @@ const RadioBtn = ({
             value={val2}
             onChange={(e) => setVal2(e.target.value)}
           />
-          <label htmlFor={lbl2}>{lbl2}</label>
+          <label htmlFor={lbl2} id={`label-${lbl2}`}>
+            {lbl2}
+          </label>
         </section>
       )}
       {val3 && (
@@ -58,7 +64,9 @@ const RadioBtn = ({
             value={val3}
             onChange={(e) => setVal3(e.target.value)}
           />
-          <label htmlFor={lbl3}>{lbl3}</label>
+          <label htmlFor={lbl3} id={`label-${lbl3}`}>
+            {lbl3}
+          </label>
         </section>
       )}
     </section>

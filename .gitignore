@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/test-e-nagrik-bdd/node_modules
 /.pnp
 .pnp.js
 

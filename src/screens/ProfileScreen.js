@@ -11,7 +11,7 @@ const ProfileScreen = ({ history }) => {
   }, [history, success]);
 
   return (
-    <section className='profile-screen'>
+    <section className='profile-screen' id='profile-screen'>
       <br />
       <br />
       <br />

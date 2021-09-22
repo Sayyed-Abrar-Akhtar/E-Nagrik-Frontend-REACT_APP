@@ -64,6 +64,7 @@ const RegisterScreen = ({ history }) => {
             placeholder='Name'
             val={ctznName}
             setVal={setCtznName}
+            isRegExpValid={true}
           />
 
           <RadioBtn
@@ -80,6 +81,7 @@ const RegisterScreen = ({ history }) => {
             placeholder='Birth Place'
             val={birthPlace}
             setVal={setBirthPlace}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
@@ -90,25 +92,27 @@ const RegisterScreen = ({ history }) => {
 
           <InputField
             inputType='text'
-            placeholder="Father's Name"
+            placeholder='Father Name'
             val={fatherName}
             setVal={setFatherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
-            placeholder="Father's Address"
+            placeholder='Father Address'
             val={fatherAddress}
             setVal={setFatherAddress}
           />
           <InputField
             inputType='text'
-            placeholder="Mother's Name"
+            placeholder='Mother Name'
             val={motherName}
             setVal={setMotherName}
+            isRegExpValid={true}
           />
           <InputField
             inputType='text'
-            placeholder="Mother's Address"
+            placeholder='Mother Address'
             val={motherAddress}
             setVal={setMotherAddress}
           />
@@ -129,11 +133,21 @@ const RegisterScreen = ({ history }) => {
         {loading ? (
           <Btn classes='btn btn--primary' text='Loading...' />
         ) : (
-          <Btn classes='btn btn--primary' text='register' />
+          <Btn
+            classes='btn btn--primary'
+            text='register'
+            idName='citizen-register-btn'
+          />
         )}
       </form>
       {error && <MessageBar type='error' text={error} />}
-      {success && <Dialog type='success' text='Registration Successful' />}
+      {success && (
+        <Dialog
+          type='success'
+          text='Registration Successful'
+          idName='citizen-register-success'
+        />
+      )}
     </section>
   );
 };

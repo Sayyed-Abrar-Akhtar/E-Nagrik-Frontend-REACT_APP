@@ -1,23 +1,51 @@
 import React from 'react';
 
-const InputField = ({ placeholder, inputType, val, setVal }) => {
+const InputField = ({ placeholder, inputType, val, setVal, isRegExpValid }) => {
+  const idVal = placeholder.replaceAll(' ', '-').toLowerCase();
   return (
     <section className='input-container'>
       {setVal ? (
+        isRegExpValid ? (
+          <input
+            name={idVal}
+            type={inputType}
+            id={idVal}
+            pattern='^[a-zA-Z ]*$'
+            title='Only text are allowed'
+            className={`input-field`}
+            placeholder={placeholder}
+            value={val}
+            onChange={(e) => setVal(e.target.value)}
+            required
+          />
+        ) : (
+          <input
+            name={idVal}
+            type={inputType}
+            id={idVal}
+            className={`input-field`}
+            placeholder={placeholder}
+            value={val}
+            onChange={(e) => setVal(e.target.value)}
+            required
+          />
+        )
+      ) : isRegExpValid ? (
         <input
-          name={val}
+          name={idVal}
           type={inputType}
-          id={val}
+          id={idVal}
+          pattern='^[a-zA-Z ]*$'
+          title='Only text are allowed'
           className={`input-field`}
           placeholder={placeholder}
-          onChange={(e) => setVal(e.target.value)}
           required
         />
       ) : (
         <input
-          name={placeholder}
+          name={idVal}
           type={inputType}
-          id={placeholder}
+          id={idVal}
           className={`input-field`}
           placeholder={placeholder}
           required

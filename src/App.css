@@ -14,6 +14,8 @@
   --error-msg-gradient-to: rgb(247, 23, 53);
   --success-msg-gradient-from: rgb(11, 171, 100);
   --success-msg-gradient-to: rgb(59, 183, 143);
+  --error: rgb(247, 23, 53);
+  --success: rgb(11, 171, 100);
 }
 
 body {
@@ -190,6 +192,12 @@ textarea {
 
 .btn--primary:hover {
   background-color: var(--primary-color);
+}
+
+.btn--error {
+  background-color: var(--error);
+  color: var(--white);
+  font-weight: bold;
 }
 
 /* Message bar */
@@ -572,4 +580,74 @@ textarea {
 .support-screen {
   width: 80%;
   margin: 5rem auto;
+}
+
+/* PROFILE SCREEN */
+.profile-screen {
+  width: 95%;
+  margin: 5rem auto;
+}
+
+.profile-img {
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-left: 7.5rem;
+}
+
+.profile-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.profile-details {
+  width: 100%;
+  border: 3px solid var(--primary-color);
+  border-radius: 3.5rem;
+  margin-top: -5rem;
+  padding: 2rem 5rem;
+  padding-top: 6rem;
+  box-sizing: border-box;
+
+  display: flex;
+}
+
+.profile-log {
+  width: 70%;
+}
+
+.profile-name {
+  text-align: left;
+  margin: 0.8rem 0;
+  letter-spacing: 1px;
+}
+
+.appointment-details > p,
+.profile-log > p {
+  margin: 0.3rem 0;
+}
+
+.appointment-details > p > strong,
+.profile-log > p > strong {
+  display: inline-block;
+  width: 10rem;
+}
+
+.profile-log.logout {
+  align-self: flex-end;
+}
+
+.appointment-heading {
+  margin: 3rem 0;
+}
+
+.appointment-details {
+  width: 100%;
+  border: 3px solid var(--primary-color);
+  border-radius: 3.5rem;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
 }
